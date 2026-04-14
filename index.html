@@ -10,109 +10,96 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--tg-theme-bg-color, #f5f0f0);
+      background: linear-gradient(135deg, #0f1b2d 0%, #1a2744 40%, #243b6e 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px 20px 300px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: '🎭 ❓ 👤 🕵️ 💬 ❓ 🎭 👻 ❓ 💬 🎭 ❓ 👤 🕵️ 💬 ❓ 🎭 👻 ❓ 💬 🎭 ❓ 👤 🕵️ 💬 🎭 👻 ❓ 💬 🎭 ❓ 👤 🕵️ 💬 ❓ 🎭 👻';
+      position: fixed;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      font-size: 28px;
+      line-height: 80px;
+      letter-spacing: 40px;
+      word-spacing: 30px;
+      opacity: 0.06;
+      pointer-events: none;
+      transform: rotate(-15deg) translate(-10%, -10%);
+      z-index: 0;
+      white-space: pre-wrap;
     }
     .card {
-      background: white;
+      background: rgba(255,255,255,0.95);
       border-radius: 24px;
       padding: 32px 20px;
       max-width: 400px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(10px);
     }
+    .card-header { font-size: 36px; margin-bottom: 6px; }
+    .card-title { font-size: 17px; font-weight: 700; color: #1a2744; margin-bottom: 20px; }
     .info-box {
-      background: #faf8f5;
-      border: 1.5px solid #ede5da;
+      background: #f0f4ff;
+      border: 1.5px solid #c8d6f0;
       border-radius: 16px;
       padding: 18px;
       margin-bottom: 20px;
       text-align: left;
     }
-    .info-box .info-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 12px;
-    }
+    .info-box .info-title { font-size: 15px; font-weight: 700; color: #1a2744; margin-bottom: 12px; }
     .info-box .info-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: #444;
-      margin-bottom: 8px;
-      line-height: 1.4;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: #444; margin-bottom: 8px; line-height: 1.4;
     }
     .info-box .info-row:last-child { margin-bottom: 0; }
     .info-box .info-row .icon { font-size: 18px; flex-shrink: 0; }
-    .info-box .info-row b { color: #1a1a1a; }
+    .info-box .info-row b { color: #1a2744; }
     .email-input {
-      width: 100%;
-      padding: 16px;
-      border: 1.5px solid #ddd;
-      border-radius: 14px;
-      font-size: 15px;
-      margin-bottom: 16px;
-      outline: none;
-      transition: border 0.2s;
+      width: 100%; padding: 16px;
+      border: 1.5px solid #c8d6f0; border-radius: 14px;
+      font-size: 15px; margin-bottom: 16px; outline: none;
+      transition: border 0.2s; background: #f8faff;
     }
-    .email-input:focus { border-color: #e8734a; }
+    .email-input:focus { border-color: #4a7cf7; }
     .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      text-align: left;
-      margin-bottom: 14px;
-      padding: 0 4px;
+      display: flex; align-items: flex-start; gap: 10px;
+      text-align: left; margin-bottom: 14px; padding: 0 4px;
     }
     .checkbox-row input[type="checkbox"] {
-      margin-top: 3px;
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      accent-color: #e8734a;
+      margin-top: 3px; width: 18px; height: 18px;
+      flex-shrink: 0; accent-color: #4a7cf7;
     }
-    .checkbox-row label {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.4;
-    }
-    .checkbox-row label a { color: #e8734a; text-decoration: underline; }
+    .checkbox-row label { font-size: 13px; color: #555; line-height: 1.4; }
+    .checkbox-row label a { color: #4a7cf7; text-decoration: underline; }
     .pay-btn {
-      background: linear-gradient(135deg, #f08c5a, #e8734a);
-      color: white;
-      border: none;
-      border-radius: 16px;
-      padding: 18px 32px;
-      font-size: 18px;
-      font-weight: 700;
-      width: 100%;
-      cursor: pointer;
-      margin-bottom: 10px;
-      transition: opacity 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      background: linear-gradient(135deg, #4a7cf7, #3461d1);
+      color: white; border: none; border-radius: 16px;
+      padding: 18px 32px; font-size: 18px; font-weight: 700;
+      width: 100%; cursor: pointer; margin-bottom: 10px;
+      transition: opacity 0.2s, transform 0.1s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(74,124,247,0.4);
     }
-    .pay-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .pay-btn:hover { transform: translateY(-1px); }
+    .pay-btn:active { transform: translateY(0); }
+    .pay-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .price-note { font-size: 12px; color: #aaa; margin-top: 4px; }
     .result-block { display: none; }
     .result-emoji { font-size: 56px; margin-bottom: 12px; }
     .success-badge {
-      background: #e8f5e9;
-      color: #2e7d32;
-      border-radius: 12px;
-      padding: 14px 20px;
-      font-size: 15px;
-      font-weight: 600;
-      margin: 16px 0;
+      background: #e8f5e9; color: #2e7d32; border-radius: 12px;
+      padding: 14px 20px; font-size: 15px; font-weight: 600; margin: 16px 0;
     }
     .subtitle { font-size: 15px; color: #888; line-height: 1.5; }
   </style>
@@ -120,6 +107,9 @@
 <body>
   <div class="card">
     <div id="before-pay">
+      <div class="card-header">🕵️‍♂️</div>
+      <div class="card-title">Узнай кто написал</div>
+
       <div class="info-box">
         <div class="info-title">📋 Что вы покупаете:</div>
         <div class="info-row"><span class="icon">🔓</span> Открытие имени отправителя</div>
@@ -141,7 +131,7 @@
       </div>
 
       <button class="pay-btn" id="pay-btn" onclick="startPayment()">
-        👀 Узнать за 19 ₽
+        🔓 Узнать за 19 ₽
       </button>
       <p class="price-note">Email нужен для отмены подписки</p>
     </div>
@@ -170,18 +160,9 @@
 
     function startPayment() {
       const email = document.getElementById('email-input').value.trim();
-      if (!email || !email.includes('@')) {
-        alert('Введите корректный email');
-        return;
-      }
-      if (!document.getElementById('agree-terms').checked) {
-        alert('Примите условия оферты');
-        return;
-      }
-      if (!document.getElementById('agree-recurrent').checked) {
-        alert('Подтвердите согласие на автоматическое списание');
-        return;
-      }
+      if (!email || !email.includes('@')) { alert('Введите корректный email'); return; }
+      if (!document.getElementById('agree-terms').checked) { alert('Примите условия оферты'); return; }
+      if (!document.getElementById('agree-recurrent').checked) { alert('Подтвердите согласие на автоматическое списание'); return; }
 
       const btn = document.getElementById('pay-btn');
       btn.disabled = true;
@@ -205,7 +186,7 @@
         onSuccess: function() { showSuccess(); },
         onFail: function() {
           btn.disabled = false;
-          btn.innerHTML = '👀 Узнать за 19 ₽';
+          btn.innerHTML = '🔓 Узнать за 19 ₽';
         }
       });
     }
